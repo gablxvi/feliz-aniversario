@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Aniversário!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <section class="welcome" id="welcome">
+            <div class="welcome-content">
+                <div class="birthday-cake">🎂</div>
+                <h1>Feliz 16 Anos! ❤️</h1>
+                <h2>Hoje o mundo fica mais bonito só porque você nasceu.</h2>
+                <a href="message.html" class="btn">Ver mensagem especial para você 💌</a>
+            </div>
+            <div class="hearts">
+                <span class="heart">❤️</span>
+                <span class="heart">💖</span>
+                <span class="heart">💕</span>
+                <span class="heart">💓</span>
+                <span class="heart">💘</span>
+                <span class="heart">💗</span>
+                <span class="heart">💞</span>
+                <span class="heart">💝</span>
+            </div>
+            <div class="balloons">
+                <div class="balloon" style="--balloon-color: #ff6b98;">🎈</div>
+                <div class="balloon" style="--balloon-color: #f472b6; animation-delay: 2s;">🎈</div>
+                <div class="balloon" style="--balloon-color: #ffb6c1; animation-delay: 3.5s;">🎈</div>
+                <div class="balloon" style="--balloon-color: #ff4d8d; animation-delay: 1s;">🎈</div>
+                <div class="balloon" style="--balloon-color: #f48fb1; animation-delay: 4s;">🎈</div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Adicionar animação de confetes quando a página carregar
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                const confettiCount = 100;
+                const confettiContainer = document.createElement('div');
+                confettiContainer.className = 'confetti-container';
+                
+                for (let i = 0; i < confettiCount; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.animationDelay = Math.random() * 5 + 's';
+                    confetti.style.backgroundColor = `hsl(${Math.random() * 60 + 300}, 100%, ${Math.random() * 25 + 65}%)`;
+                    confettiContainer.appendChild(confetti);
+                }
+                
+                document.body.appendChild(confettiContainer);
+                
+                setTimeout(() => {
+                    document.body.removeChild(confettiContainer);
+                }, 10000);
+            }, 1000);
+        });
+    </script>
+</body>
+</html> 
